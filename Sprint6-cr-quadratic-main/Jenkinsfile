@@ -1,0 +1,11 @@
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        awsCodeBuild 'sprint6-cr-quadratics-build'
+      }
+    }
+
+  }
+}
