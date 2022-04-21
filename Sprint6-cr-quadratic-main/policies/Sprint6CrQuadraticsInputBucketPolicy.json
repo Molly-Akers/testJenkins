@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "IPAllow",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::sprint6-cr-quadratics-input",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "18.216.67.167"
+                }
+            }
+        }
+    ]
+}

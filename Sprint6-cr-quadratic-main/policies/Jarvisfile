@@ -1,0 +1,17 @@
+pipeline {
+    agent { docker { image 'maven:3.8.4-openjdk-11-slim' } }
+    stages {
+        stage('build') {
+            steps {
+                awsCodeBuild projectName: 'sprint6-cr-quadratics-build', 
+                credentialsType: 'keys', 
+                awsAccessKey: 'ASIA2AC55IXK5SUGOSLE'
+                awsSecretKey: 'Hbj234gLVwdgwOzTxgGVam07S5evs41rbV1JzrN8'
+                awsSecretKey: 'IQoJb3JpZ2luX2VjEGAaCXVzLWVhc3QtMiJHMEUCIQCBzujNLIViP2m9x2w5ixlp5CDgngimxh4v4NnFvpDFKQIgdLyKMn0PtJGriSinYyRdx02tbnCLa4+fv6zRLqvHvVcq+gMIGRAAGgw2ODczOTE3MjA5MTciDC/HaRImEhXVbipQPSrXA9u4Sk/gvXxRA8UgHrNszsBD0H0sIjNxce5mLlof0tndWtjj7u09M2CV3UGJ9ywMGMEJxoqumgizTzGKYAVt2BqTITkEo7PobdHjLhbdwVI/6hYENAUsy3oqbsjXA/sUr++V9xKjIPrVDvhOb5Bcbg7eCtcRmMM9PH2f3Jowq62qYYeJx91Et3/DwagdEK/zqKCVvnI5Jg5ksyqnNDG591tWmjYe6Wxb9RVDOzedgggitIz2vRsnW/fbNhQ56dTurwQ4hjnlRiEFTNErKTWUyJ/XahdeMsGaACgsxUUJL9JtHwbdkR8l+KTE6t5Rm0BylRwQEYk9R4Db4bTClc5N6bvHbC3DZTGhRCwloaduxRax6fEA70ooCdek5we2e7WEdtrDDWb3GzKVEaSVBL+NfyeC7r2zx/3kmHpNK1MxgU/wqQWKEEzIwVRM48CnDeuM2v9AN+94tAnY5uWQMZmRMS0WPs2mwl/l9ByEvpuYO/sqZp0Z9mPqBkHASv9pspnsyC4Ag5xiCS8r6HURG+eahlq5U66ZjruHgCgRhKb/ucnm/UtL7WxyxAsEOpA9MZmRpizpoMo8Z/qIEuoV6aVQuavVbNNCokiNsefrcuRPAflIuYLiZ02WITC15YCTBjqlATgJdsrtZckzDM1kETfndLvYtqLdcETOjCbrdrPxZXhc1jRiulzScPWCHjdyQGzbyp4JHCvAWr1YRZi2a71WfCVj9wx/A0O1NZKJJ8XTNl7+49YQgz2NZdCnTfGUwIOzzkAobzRAc2WLVPV5Tdr+tHBsacrBVnmrFGzpnH7I1Be/2PCiDUjJtNNCCwqH3EjFSwQP9VZX8TbXn3HnyeszbczHTQFEGA=='
+                region: 'us-east-2', 
+                sourceControlType: 'jenkins'
+            }
+        }
+    }
+
+}
